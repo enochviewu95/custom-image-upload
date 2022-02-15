@@ -1,0 +1,26 @@
+input[type="file"]{
+    display: none;
+}
+
+.image-form{
+    border: 1px solid #bbc8ca;
+    border-radius: 5px;
+}
+
+.image-form > img {
+    content: url("../assets/image-placeholder-disabled.png");
+}
+
+
+.image-form-active{
+    border: 1px solid #0dcaf0;
+    border-radius: 5px;
+}
+
+.image-form-active > .temp-placeholder{
+    content: url("../assets/image-placeholder.png");
+}
+
+img{
+    border-radius: 5px;
+}
