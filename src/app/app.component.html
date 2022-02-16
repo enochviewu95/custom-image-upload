@@ -9,7 +9,7 @@
           <img class="align-self-center" [src]="imageSrcOne" *ngIf="imageSrcOne" style="height: 100px; width: 100px;" />
         </div>
       </label>
-      <input formControlName="fileOne" id="fileOne" type="file" class="form-control" (change)="onFileChangeOne($event)">
+      <input formControlName="fileOne" id="fileOne" type="file" class="form-control" (change)="onFileChange($event)">
       <div *ngIf="a['fileOne'].touched && a['fileOne'].invalid" class="alert">
         <div *ngIf="a['fileOne'].errors?.['required']">File is required</div>
       </div>
@@ -24,7 +24,7 @@
           <img class="align-self-center" [src]="imageSrcTwo" *ngIf="imageSrcTwo" style="height: 100px; width: 100px;" />
         </div>
       </label>
-      <input formControlName="fileTwo" id="fileTwo" type="file" class="form-control" (change)="onFileChangeTwo($event)" [attr.disabled]="!myFormOne.valid?'':null">
+      <input formControlName="fileTwo" id="fileTwo" type="file" class="form-control" (change)="onFileChange($event)" [attr.disabled]="!myFormOne.valid?'':null">
       <div *ngIf="b['fileTwo'].touched && b['fileTwo'].invalid" class="alert">
         <div *ngIf="b['file'].errors?.['required']">File is required</div>
       </div>
@@ -40,7 +40,7 @@
             style="height: 100px; width: 100px;" />
         </div>
       </label>
-      <input formControlName="fileThree" id="fileThree" type="file" class="form-control" (change)="onFileChangeThree($event)" [attr.disabled]="!myFormTwo.valid?'':null">
+      <input formControlName="fileThree" id="fileThree" type="file" class="form-control" (change)="onFileChange($event)" [attr.disabled]="!myFormTwo.valid?'':null">
       <div *ngIf="c['fileThree'].touched && c['fileThree'].invalid" class="alert">
         <div *ngIf="c['fileThree'].errors?.['required']">File is required</div>
       </div>
@@ -57,7 +57,7 @@
             style="height: 100px; width: 100px;" />
         </div>
       </label>
-      <input formControlName="fileFour" id="fileFour" type="file" class="form-control" (change)="onFileChangeFour($event)" [attr.disabled]="!myFormThree.valid?'':null">
+      <input formControlName="fileFour" id="fileFour" type="file" class="form-control" (change)="onFileChange($event)" [attr.disabled]="!myFormThree.valid?'':null">
       <div *ngIf="d['fileFour'].touched && d['fileFour'].invalid" class="alert">
         <div *ngIf="d['fileFour'].errors?.['required']">File is required</div>
       </div>

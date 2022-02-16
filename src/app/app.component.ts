@@ -60,66 +60,43 @@ export class AppComponent {
     return this.myFormFour.controls;
   }
 
-  onFileChangeOne(event: any){
+  onFileChange(event:any){
     const reader = new FileReader();
     if(event.target.files && event.target.files.length){
       const [file] = event.target.files;
       reader.readAsDataURL(file);
 
       reader.onload = () =>{
-        this.imageSrcOne = reader.result as string;
-        this.myFormOne.patchValue({
-          fileSourceOne: reader.result
-        });
-      };
+        switch(event.target.id){
+          case 'fileOne':
+            this.imageSrcOne = reader.result as string;
+            this.myFormOne.patchValue({
+              fileSourceOne: reader.result
+            });
+            break;
+            case 'fileTwo':
+            this.imageSrcTwo = reader.result as string;
+            this.myFormTwo.patchValue({
+              fileSourceTwo: reader.result
+            });
+            break;
+            case 'fileThree':
+            this.imageSrcThree = reader.result as string;
+            this.myFormThree.patchValue({
+              fileSourceThree: reader.result
+            });
+            break;
+            case 'fileFour':
+            this.imageSrcFour = reader.result as string;
+            this.myFormFour.patchValue({
+              fileSourceFour: reader.result
+            });
+            break;
+        }
+      }
     }
   }
 
-
-  onFileChangeTwo(event: any){
-    const reader = new FileReader();
-    if(event.target.files && event.target.files.length){
-      const [file] = event.target.files;
-      reader.readAsDataURL(file);
-
-      reader.onload = () =>{
-        this.imageSrcTwo = reader.result as string;
-        this.myFormTwo.patchValue({
-          fileSourceTwo: reader.result
-        });
-      };
-    }
-  }
-
-  onFileChangeThree(event: any){
-    const reader = new FileReader();
-    if(event.target.files && event.target.files.length){
-      const [file] = event.target.files;
-      reader.readAsDataURL(file);
-
-      reader.onload = () =>{
-        this.imageSrcThree = reader.result as string;
-        this.myFormThree.patchValue({
-          fileSourceThree: reader.result
-        });
-      };
-    }
-  }
-  
-  onFileChangeFour(event: any){
-    const reader = new FileReader();
-    if(event.target.files && event.target.files.length){
-      const [file] = event.target.files;
-      reader.readAsDataURL(file);
-
-      reader.onload = () =>{
-        this.imageSrcFour = reader.result as string;
-        this.myFormFour.patchValue({
-          fileSourceFour: reader.result
-        });
-      };
-    }
-  }
   submit(){
     console.log(this.myFormOne.value);
     console.log(this.myFormTwo.value);
